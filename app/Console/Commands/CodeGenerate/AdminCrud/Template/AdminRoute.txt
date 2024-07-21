@@ -1,0 +1,4 @@
+    // Router #name#
+    Route::group([], function () {
+        Route::resource('#nameSnake#', \App\Http\Controllers\Admin\#name#\#name#Controller::class, array("as"=>"admin"));
+    });

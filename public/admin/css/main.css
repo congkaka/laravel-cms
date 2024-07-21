@@ -1,0 +1,90 @@
+/*dropzone*/
+.single_image_upload {
+  width: 125px;
+  height: 125px;
+  padding: 0;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+}
+.single_image_upload .dz-message.needsclick {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.single_image_upload.dz-max-files-reached .dz-message.needsclick, .single_image_upload.dz-started .dz-message.needsclick {
+  display: none;
+}
+
+.store_input {
+  display: none;
+}
+
+.dz-image img {
+  width: 120px;
+  height: 120px;
+}
+
+.dz-filename {
+  display: none;
+}
+
+/*end dropzone*/
+/*custom pagination css*/
+.page-item.active .page-link {
+  z-index: 3;
+  color: #fff !important;
+  background-color: #009ef7 !important;
+  border-color: #009ef7 !important;
+  border-radius: 50%;
+  padding: 6px 12px;
+}
+.page-item:first-child .page-link {
+  border-radius: 30% !important;
+}
+.page-item:last-child .page-link {
+  border-radius: 30% !important;
+}
+
+.page-link {
+  z-index: 3;
+  color: #009ef7 !important;
+  background-color: #fff;
+  border-color: #007bff;
+  border-radius: 50%;
+  padding: 6px 12px !important;
+}
+
+.pagination li {
+  padding: 3px;
+}
+
+.disabled .page-link {
+  color: #212529 !important;
+  opacity: 0.5 !important;
+}
+
+.copyIcon {
+    position: relative;
+    display: inline-block;
+    width: 17px;
+    height: 17px;
+    vertical-align: middle;
+}
+.copyIcon:after {
+    background-image: url(../../assets/ios-copy.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    display: block;
+    width: 17px;
+    height: 17px;
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    cursor: pointer;
+    top: 0;
+}
+
+/*end custom pagination css*/

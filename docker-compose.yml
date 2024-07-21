@@ -1,0 +1,43 @@
+services:
+# Web Server Service
+
+  cms-database:
+    container_name: cms-database
+    build: .
+    volumes:
+      - .:/var/www/html/
+    ports:
+      - 7001:80
+    # environment:
+    #   DB_CONNECTION: ${DB_CONNECTION}
+    #   DB_PORT: ${DB_PORT}
+    #   DB_DATABASE: ${DB_DATABASE}
+    #   DB_USERNAME: ${DB_USERNAME}
+    #   DB_HOST: ${DB_HOST}
+    #   DB_PASSWORD: ${DB_PASSWORD}"
+
+  db:
+    image: postgres
+    container_name: postgres
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    ports:
+      - "5433:5432"
+    environment: 
+      POSTGRES_DB: cms-database
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: congkaka123
+
+  # pgadmin:
+  #   image: ddidier/pgadmin
+  #   container_name: pgAdmin
+  #   ports:
+  #     - "5050:80"
+  #   depends_on:
+  #     - db 
+  #   environment:
+  #     PGADMIN_DEFAULT_EMAIL: xcongkaka1996@gmail.com
+  #     PGADMIN_DEFAULT_PASSWORD: password
+
+volumes:
+  db_data:

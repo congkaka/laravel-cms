@@ -1,0 +1,35 @@
+<?php
+
+namespace App\Http\Controllers\Admin\#name#;
+
+use App\Http\Controllers\Admin\CrudController;
+use App\Http\Requests\#name#CreateRequest;
+use App\Http\Requests\#name#UpdateRequest;
+use App\Repositories\EloquentRepository;
+use App\Repositories\#name#Repository;
+use Illuminate\Http\Request;
+
+class #name#Controller extends CrudController
+{
+    /**
+     * @var #name#Repository
+     */
+    private #name#Repository $#nameLowerFirst#Repository;
+
+    public function __construct(#name#Repository $#nameLowerFirst#Repository){
+        $this->#nameLowerFirst#Repository = $#nameLowerFirst#Repository;
+    }
+
+    /**
+     * @return #name#Repository
+     */
+    public function getRepository(): EloquentRepository
+    {
+        return $this->#nameLowerFirst#Repository;
+    }
+
+    public function getViewFolder(): string
+    {
+        return 'admin.#nameSnake#';
+    }
+}
