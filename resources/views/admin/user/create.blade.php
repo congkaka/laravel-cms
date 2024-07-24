@@ -24,7 +24,8 @@
         <div class="post d-flex flex-column-fluid" id="kt_post">
             <!--begin::Container-->
             <div id="kt_content_container" class="container-xxl">
-                <form id="kt_user_form" method="post" action="{{route('admin.user.store')}}" class="form d-flex flex-column flex-lg-row gap-7 gap-lg-10">
+                <form action="{{route('admin.user.store')}}" class="form d-flex flex-column flex-lg-row gap-7 gap-lg-10"method="POST">
+                    @method('post')
                     @csrf
                     <!--begin::Main column-->
                     <div class="d-flex flex-column flex-row-fluid gap-12 gap-lg-12">
@@ -41,27 +42,56 @@
                             <div class="card-body pt-0">
                                 <div class="row">
                                     <div class="col-md-4">
-                                        <x-admin.single-img-upload inputName="image"/>
+                                        <x-admin.single-img-upload inputName="image" fillValue=""/>
                                     </div>
                                     <div class="col-md-8">
                                         <div class="mb-10 fv-row">
                                             <!--begin::Label-->
-                                            <label class="required form-label">Tên dịch vụ</label>
+                                            <label class="required form-label">Name</label>
                                             <!--end::Label-->
-                                            <input type="text" name="name" class="form-control"/>
+                                            <input type="text" name="name" value="" class="form-control"/>
                                         </div>
                                         <div class="mb-10 fv-row">
-                                            <label class="required form-label">Loại dịch vụ</label>
+                                            <!--begin::Label-->
+                                            <label class="required form-label">UserName</label>
                                             <!--end::Label-->
-                                            <select name="type" required class="form-select mb-2" data-placeholder="Select an option">
-                                                <option value="BY_TIME">Theo thời gian</option>
-                                                <option value="BASIC">Thường</option>
+                                            <input type="text" name="user_name" value="" class="form-control"/>
+                                        </div>
+
+                                        <div class="mb-10 fv-row">
+                                            <!--begin::Label-->
+                                            <label class="required form-label">Password</label>
+                                            <!--end::Label-->
+                                            <input type="password" name="password" value="" class="form-control"/>
+                                        </div>
+
+                                        <div class="mb-10 fv-row">
+                                            <!--begin::Label-->
+                                            <label class="required form-label">Email</label>
+                                            <!--end::Label-->
+                                            <input type="text" name="email" value="" class="form-control"/>
+                                        </div>
+
+                                        <div class="mb-10 fv-row">
+                                            <!--begin::Label-->
+                                            <label class="required form-label">Phone</label>
+                                            <!--end::Label-->
+                                            <input type="text" name="phone" value="" class="form-control"/>
+                                        </div>
+                                        
+                                        <div class="mb-10 fv-row">
+                                            <label class="required form-label">Level</label>
+                                            <!--end::Label-->
+                                            <select name="level" required class="form-select mb-2" data-placeholder="Select an option">
+                                                @foreach(\App\Enums\MemberLevel::getMap() as $v => $l)
+                                                    <option value="{{$v}}">{{$l}}</option>
+                                                @endforeach
                                             </select>
                                         </div>
                                         <div class="mb-10 fv-row">
                                             <label class="col-lg-4 col-form-label fw-bold fs-6">Trạng thái hoạt động</label>
                                             <div class="form-check form-switch">
-                                                <input class="form-check-input" name="is_active" type="checkbox" checked role="switch" id="flexSwitchCheckChecked">
+                                                <input class="form-check-input" name="is_active" type="checkbox" role="switch" id="flexSwitchCheckChecked">
                                             </div>
                                         </div>
                                     </div>
@@ -75,9 +105,8 @@
                             <a href="{{route('admin.user.index')}}" id="kt_user_cancel" class="btn btn-light me-5">Quay lại</a>
                             <!--end::Button-->
                             <!--begin::Button-->
-                            <button type="submit" id="kt_user_submit" class="btn btn-primary">
+                            <button type="submit" class="btn btn-primary">
                                 <span class="indicator-label">Lưu</span>
-                                <span class="indicator-progress">Please wait... <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
                             </button>
                             <!--end::Button-->
                         </div>

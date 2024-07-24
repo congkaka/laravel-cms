@@ -16,7 +16,7 @@
                     <span class="h-20px border-gray-300 border-start mx-4"></span>
                     <!--end::Separator-->
                 </div>
-                {{--                <a href="{{route('admin.user.create')}}" class="btn btn-sm fw-bold btn-primary" >Thêm</a>--}}
+                <a href="{{route('admin.user.create')}}" class="btn btn-sm fw-bold btn-primary" >Thêm</a>
                 <!--end::Page title-->
             </div>
             <!--end::Container-->
@@ -90,7 +90,7 @@
                                     <td> {{ $i->balance}} </td>
                                     <td> {{ $i->username}} </td>
                                     <td> {{ $i->phone}} </td>
-                                    <td> {{ $i->is_admin ? 'Admin' : $i->level}} </td>
+                                    <td> {{ $i->is_admin ? 'ADMIN' : $i->level}} </td>
                                     <!--end::Category=-->
                                     <!--begin::Action=-->
                                     <td class="text-end">
@@ -114,7 +114,7 @@
                                                 <a href="{{route('admin.user.edit', $i->id)}}" class="menu-link"><i
                                                         class="bi bi-pencil-square text-warning pe-3"></i>Sửa</a>
                                             </div>
-                                            @if($i->is_admin)
+                                            @if(Auth::user() && Auth::user()->is_admin)
                                                 <div class="menu-item">
                                                     <a href="{{route('admin.user.destroy', $i->id)}}"
                                                        class="menu-link delete_btn"><i
