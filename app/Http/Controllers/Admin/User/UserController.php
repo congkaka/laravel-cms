@@ -5,12 +5,15 @@ namespace App\Http\Controllers\Admin\User;
 use App\Http\Controllers\Admin\CrudController;
 use App\Http\Requests\UserCreateRequest;
 use App\Http\Requests\UserUpdateRequest;
+use App\Models\User;
 use App\Repositories\EloquentRepository;
 use App\Repositories\UserRepository;
 use App\Repositories\WalletChangeLogRepository;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Spatie\Permission\Models\Role;
+use Spatie\Permission\Models\Permission;
 
 class UserController extends CrudController
 {
@@ -45,6 +48,26 @@ class UserController extends CrudController
         $walletChanges = $this->walletChangeLogRepository->getPaginate($request);
 
         return view($this->getViewWithFolder('wallet_history'), compact('walletChanges'));
+    }
+
+    public function decentralization(Request $request)
+    {
+        // $role = Role::create(['name' => 'admin']);
+        // $permission = Permission::create(['name' => 'Blogs manager']);
+
+        // $role = Role::find(1);
+        // $permission = Permission::find(4);
+
+        // $role->givePermissionTo($permission);
+        
+
+        $user = User::find($request->user_id);
+        $permissions = Permission::all();
+        if ($request->isMethod('post')) {
+            $permissionList = $request->permission_list;
+            if ($permissionList) $user->syncPermissions($permissionList);
+        }
+        return view($this->getViewWithFolder('decentralization'), compact('user', 'permissions'));
     }
 
     /**

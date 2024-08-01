@@ -13,8 +13,8 @@
     <!--begin::Brand-->
     <div class="aside-logo flex-column-auto" id="kt_aside_logo">
         <!--begin::Logo-->
-        <a href="../../demo1/dist/index.html">
-            <img alt="Logo" src="{{asset('admin/media/logo.svg')}}" class="h-25px logo" />
+        <a href="/cms">
+            <img alt="Logo" src="{{asset('admin/media/logo2.png')}}" class="h-85px logo" />
         </a>
         <!--end::Logo-->
         <!--begin::Aside toggler-->

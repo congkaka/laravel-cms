@@ -23,6 +23,7 @@
             </div>
         </div>
     @else
+        @if(Auth::user() && Auth::user()->can($menuItem['text']))
         <div class="menu-item">
             <a class="menu-link {{Route::is(explode('|',$menuItem['activeIs']))?'active':''}}"
                href="{{route($menuItem['route'])}}">
@@ -32,5 +33,6 @@
                 <span class="menu-title">{{$menuItem['text']}}</span>
             </a>
         </div>
+        @endif
     @endif
 @endforeach

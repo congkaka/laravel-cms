@@ -2,6 +2,11 @@
 <html lang="en">
 <!--begin::Head-->
 <head>
+    <meta name="description"
+          content="Unlockmega">
+    <meta property="og:title" content="Unlockmega">
+    <meta property="og:description"
+          content="Unlockmega">
     <base href="{{asset('')}}">
     <meta charset="utf-8"/>
     <link rel="shortcut icon" href="{{asset('admin/media/favicon.ico')}}"/>
@@ -9,6 +14,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700"/>
     <!--end::Fonts-->
     @include('admin.layouts.style')
+    @stack('custom-css')
 </head>
 <!--end::Head-->
 <!--begin::Body-->

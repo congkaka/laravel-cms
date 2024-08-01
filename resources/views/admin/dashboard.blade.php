@@ -31,10 +31,10 @@
                             <!--begin::Hidden-->
                             <div class="d-flex flex-stack flex-wrap flex-grow-1 px-9 pt-9 pb-3">
                                 <div class="me-2">
-                                    <span class="fw-bolder text-gray-800 d-block fs-3">Sales</span>
+                                    <span class="fw-bolder text-gray-800 d-block fs-3">Content 1</span>
                                     <span class="text-gray-400 fw-bold">Oct 8 - Oct 26 21</span>
                                 </div>
-                                <div class="fw-bolder fs-3 text-primary">$15,300</div>
+                                <div class="fw-bolder fs-3 text-primary">X</div>
                             </div>
                             <!--end::Hidden-->
                             <!--begin::Chart-->
@@ -54,10 +54,10 @@
                             <!--begin::Hidden-->
                             <div class="d-flex flex-stack flex-wrap flex-grow-1 px-9 pt-9 pb-3">
                                 <div class="me-2">
-                                    <span class="fw-bolder text-gray-800 d-block fs-3">Sales</span>
+                                    <span class="fw-bolder text-gray-800 d-block fs-3">Content 2</span>
                                     <span class="text-gray-400 fw-bold">Oct 8 - Oct 26 21</span>
                                 </div>
-                                <div class="fw-bolder fs-3 text-primary">$15,300</div>
+                                <div class="fw-bolder fs-3 text-primary">Y</div>
                             </div>
                             <!--end::Hidden-->
                             <!--begin::Chart-->
@@ -78,10 +78,10 @@
                             <div class="flex-grow-1 card-p pb-0">
                                 <div class="d-flex flex-stack flex-wrap">
                                     <div class="me-2">
-                                        <a href="#" class="text-dark text-hover-primary fw-bolder fs-3">Generate Reports</a>
-                                        <div class="text-muted fs-7 fw-bold">Finance and accounting reports</div>
+                                        <a href="#" class="text-dark text-hover-primary fw-bolder fs-3">Content 3</a>
+                                        <div class="text-muted fs-7 fw-bold">Oct 8 - Oct 26 24</div>
                                     </div>
-                                    <div class="fw-bolder fs-3 text-primary">$24,500</div>
+                                    <div class="fw-bolder fs-3 text-primary">Z</div>
                                 </div>
                             </div>
                             <!--end::Stats-->

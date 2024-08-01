@@ -9,12 +9,10 @@
                 <div data-kt-swapper="true" data-kt-swapper-mode="prepend"
                      data-kt-swapper-parent="{default: '#kt_content_container', 'lg': '#kt_toolbar_container'}"
                      class="page-title d-flex align-items-center flex-wrap me-3 mb-5 mb-lg-0">
-                    <!--begin::Title-->
-                    <h1 class="d-flex align-items-center text-dark fw-bolder fs-3 my-1">Tài khoản</h1>
-                    <!--end::Title-->
-                    <!--begin::Separator-->
-                    <span class="h-20px border-gray-300 border-start mx-4"></span>
-                    <!--end::Separator-->
+                     <ol class="breadcrumb text-muted fs-6 fw-semibold">
+                        <li class="breadcrumb-item"><a href="/cms" class="">Home</a></li>
+                        <li class="breadcrumb-item text-muted">Tài khoản</li>
+                    </ol>
                 </div>
                 <a href="{{route('admin.user.create')}}" class="btn btn-sm fw-bold btn-primary" >Thêm</a>
                 <!--end::Page title-->
@@ -68,7 +66,6 @@
                                 <th>ID</th>
                                 <th>name</th>
                                 <th>email</th>
-                                <th>balance</th>
                                 <th>username</th>
                                 <th>phone</th>
                                 <th>level</th>
@@ -87,7 +84,6 @@
                                     </td>
                                     <td> {{ $i->name}} </td>
                                     <td> {{ $i->email}} </td>
-                                    <td> {{ $i->balance}} </td>
                                     <td> {{ $i->username}} </td>
                                     <td> {{ $i->phone}} </td>
                                     <td> {{ $i->is_admin ? 'ADMIN' : $i->level}} </td>
@@ -102,10 +98,12 @@
                                         <div
                                             class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-bold fs-7 w-125px"
                                             data-kt-menu="true">
+                                            @if(Auth::user() && Auth::user()->can('decentralization'))
                                             <div class="menu-item">
-                                                <a href="{{route('admin.user.wallet_history',['user_id' => $i->id])}}" class="menu-link">
-                                                    <i class="bi bi-wallet2 text-primary pe-3"></i>Dòng tiền</a>
+                                                <a href="{{route('admin.user.decentralization',['user_id' => $i->id])}}" class="menu-link">
+                                                    <i class="bi bi-wallet2 text-primary pe-3"></i>Phân quyền</a>
                                             </div>
+                                            @endif
                                             <div class="menu-item">
                                                 <a href="{{route('admin.user.show', $i->id)}}" class="menu-link"><i
                                                         class="bi bi-ticket-detailed text-success pe-3"></i>Chi tiết</a>

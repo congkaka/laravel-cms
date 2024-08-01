@@ -18,7 +18,7 @@
         <!--begin::Mobile logo-->
         <div class="d-flex align-items-center flex-grow-1 flex-lg-grow-0">
             <a href="../../demo1/dist/index.html" class="d-lg-none">
-                <img alt="Logo" src="{{asset('admin/media/logo.svg')}}" class="h-30px" />
+                <img alt="Logo" src="{{asset('admin/media/logo1.png')}}" class="h-30px" />
             </a>
         </div>
         <!--end::Mobile logo-->
@@ -64,7 +64,7 @@
                             <!--end::Menu separator-->
                             <!--begin::Menu item-->
                             <div class="menu-item px-5">
-                                <a href="{{route('admin.logout')}}" class="menu-link px-5">Đăng xuất</a>
+                                <a href="{{route('admin.logout')}}" class="menu-link px-5">Log Out</a>
                             </div>
                             <!--end::Menu item-->
                             <!--begin::Menu separator-->

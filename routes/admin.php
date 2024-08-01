@@ -46,7 +46,15 @@ Route::group(['middleware' => ['web', 'auth', 'admin']], function () {
     Route::group([], function () {
         Route::resource('user', \App\Http\Controllers\Admin\User\UserController::class, array("as"=>"admin"));
         Route::get('user-wallet-history', [\App\Http\Controllers\Admin\User\UserController::class, 'walletHistory'])->name('admin.user.wallet_history');
+        Route::get('decentralization', [\App\Http\Controllers\Admin\User\UserController::class, 'decentralization'])->name('admin.user.decentralization');
+        Route::post('decentralization', [\App\Http\Controllers\Admin\User\UserController::class, 'decentralization'])->name('admin.user.update.permissions');
     });
+
+    // Router Blogs
+    Route::group([], function () {
+        Route::resource('blogs', \App\Http\Controllers\Admin\Blog\BlogController::class, array("as"=>"admin"));
+    });
+
     // Router Order
     Route::group([], function () {
         Route::resource('order', \App\Http\Controllers\Admin\Order\OrderController::class, array("as"=>"admin"));
