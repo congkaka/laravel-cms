@@ -21,6 +21,13 @@ return [
         'activeIs' => 'admin.blogs.*',
     ],
 
+    [
+        'text' => 'Category manager',
+        'route' => 'admin.categories.index',
+        'activeIs' => 'admin.categories.*',
+        'icon' => 'bi bi-card-list'
+    ],
+
 
     // [
     //     'text' => 'Dòng tiền',
