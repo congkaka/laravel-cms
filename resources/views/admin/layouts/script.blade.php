@@ -10,7 +10,7 @@
 <!--end::Global Javascript Bundle-->
 <script src="{{asset('admin/plugins/custom/toastr/toastr.min.js')}}"></script>
 <!--ckeditor-->
-<script src="{{asset('admin/plugins/custom/ckeditor/ckeditor.js')}}"></script>
+<script src="{{asset('admin/plugins/custom/ckeditor/ckeditor-classic.bundle.js')}}"></script>
 <script>
     @if(session('error'))
     toastr.error("{{ session('error') }}");

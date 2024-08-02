@@ -10,7 +10,7 @@
                      data-kt-swapper-parent="{default: '#kt_content_container', 'lg': '#kt_toolbar_container'}"
                      class="page-title d-flex align-items-center flex-wrap me-3 mb-5 mb-lg-0">
                     <!--begin::Title-->
-                    <h1 class="d-flex align-items-center text-dark fw-bolder fs-3 my-1">Sửa loại dịch vụ</h1>
+                    <h1 class="d-flex align-items-center text-dark fw-bolder fs-3 my-1">Update category</h1>
                     <!--end::Title-->
                     <!--begin::Separator-->
                     <span class="h-20px border-gray-300 border-start mx-4"></span>
@@ -49,7 +49,7 @@
                                         </div>
                                         <div class="col-md-8 row">
                                             <!--begin::Label-->
-                                            <label class="required form-label">Tên dịch vụ</label>
+                                            <label class="required form-label">Name</label>
                                             <!--end::Label-->
                                             <input type="text" name="name" value="{{$item->name}}" class="form-control"/>
                                         </div>
@@ -62,11 +62,11 @@
                         <div class="d-flex justify-content-end">
                             <!--begin::Button-->
                             <a href="{{route('admin.categories.index')}}" id="kt_ecommerce_add_product_cancel"
-                               class="btn btn-light me-5">Quay lại</a>
+                               class="btn btn-light me-5">Back</a>
                             <!--end::Button-->
                             <!--begin::Button-->
                             <button type="submit" class="btn btn-primary">
-                                <span class="indicator-label">Lưu</span>
+                                <span class="indicator-label">Save</span>
                             </button>
                             <!--end::Button-->
                         </div>
