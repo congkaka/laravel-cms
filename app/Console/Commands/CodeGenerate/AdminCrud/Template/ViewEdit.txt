@@ -60,7 +60,7 @@
                                             </select>
                                         </div>
                                         <div class="mb-10 fv-row">
-                                            <label class="col-lg-4 col-form-label fw-bold fs-6">Trạng thái hoạt động</label>
+                                            <label class="col-lg-4 col-form-label fw-bold fs-6">Status</label>
                                             <div class="form-check form-switch">
                                                 <input class="form-check-input" name="is_active" type="checkbox" {{$item->is_active ? 'checked' : ''}} role="switch" id="flexSwitchCheckChecked">
                                             </div>
@@ -73,11 +73,11 @@
                         <!--end::General options-->
                         <div class="d-flex justify-content-end">
                             <!--begin::Button-->
-                            <a href="{{route('admin.#nameSnake#.index')}}" id="kt_#nameSnake#_cancel" class="btn btn-light me-5">Quay lại</a>
+                            <a href="{{route('admin.#nameSnake#.index')}}" id="kt_#nameSnake#_cancel" class="btn btn-light me-5">Back</a>
                             <!--end::Button-->
                             <!--begin::Button-->
                             <button type="submit" class="btn btn-primary">
-                                <span class="indicator-label">Lưu</span>
+                                <span class="indicator-label">Save</span>
                             </button>
                             <!--end::Button-->
                         </div>

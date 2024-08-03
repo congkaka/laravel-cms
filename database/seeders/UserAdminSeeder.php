@@ -20,7 +20,7 @@ class UserAdminSeeder extends Seeder
      */
     public function run()
     {
-        // dd(Permission::create(['name' => 'Category manager']));
+        dd(Permission::create(['name' => 'Category manager']));
         //Create user account
         $user = User::create([
             'name' => 'congkaka',

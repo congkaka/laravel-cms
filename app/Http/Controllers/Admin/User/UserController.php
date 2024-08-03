@@ -8,7 +8,6 @@ use App\Http\Requests\UserUpdateRequest;
 use App\Models\User;
 use App\Repositories\EloquentRepository;
 use App\Repositories\UserRepository;
-use App\Repositories\WalletChangeLogRepository;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -22,12 +21,9 @@ class UserController extends CrudController
      */
     private UserRepository $userRepository;
 
-    private WalletChangeLogRepository $walletChangeLogRepository;
-
-    public function __construct(UserRepository $userRepository, WalletChangeLogRepository $walletChangeLogRepository)
+    public function __construct(UserRepository $userRepository)
     {
         $this->userRepository = $userRepository;
-        $this->walletChangeLogRepository = $walletChangeLogRepository;
     }
 
     /**
@@ -41,13 +37,6 @@ class UserController extends CrudController
     public function getViewFolder(): string
     {
         return 'admin.user';
-    }
-
-    public function walletHistory(Request $request)
-    {
-        $walletChanges = $this->walletChangeLogRepository->getPaginate($request);
-
-        return view($this->getViewWithFolder('wallet_history'), compact('walletChanges'));
     }
 
     public function decentralization(Request $request)
@@ -95,7 +84,6 @@ class UserController extends CrudController
             $user = $this->userRepository->findById($id);
             if($request->get('add')){
                 $this->userRepository->plusWallet($user->id, $request->get('add'));
-                $this->walletChangeLogRepository->addLog($user->id, $user->balance ? $user->balance : 0, $request->get('add'), true, 'Cộng bởi ' . Auth::user()->username);
             }
             $this->getRepository()->update($id, $data);
         }, 5);

@@ -61,7 +61,7 @@
                         <!--end::Card body-->
                         <!--begin::Actions-->
                         <div class="card-footer d-flex justify-content-end py-6 px-9">
-                            <button type="submit" class="btn btn-primary" id="kt_account_profile_details_submit">Lưu</button>
+                            <button type="submit" class="btn btn-primary" id="kt_account_profile_details_submit">Save</button>
                         </div>
                         <!--end::Actions-->
                     </form>
@@ -99,8 +99,8 @@
                         @csrf
                         <div id="block_group">
                             @if($setting && $setting['product_block'])
-                                @foreach($setting['product_block'] as $gk => $g)
-                                    <div class="card-body border-top p-9 block_group_item border border-primary mb-5" id="{{$gk}}">
+                            @foreach($setting['product_block'] as $gk => $g)
+                            <div class="card-body border-top p-9 block_group_item border border-primary mb-5" id="{{$gk}}">
                                 <div class="fv-row row">
                                     <div class="mb-10 col-9">
                                         <label class="required form-label">Tên nhóm</label>
@@ -118,11 +118,11 @@
                                 </div>
                                 <div class="block">
                                     @if($g['block'])
-                                        @foreach($g['block'] as $bk => $b)
-                                            <div class="fv-row row block_item mb-10 border border-warning" id="{{$bk}}">
+                                    @foreach($g['block'] as $bk => $b)
+                                    <div class="fv-row row block_item mb-10 border border-warning" id="{{$bk}}">
                                         <div class="col-2">
                                             <label class="form-label">Banner khối</label>
-                                            <x-single-img-upload inputName="product_block[{{$gk}}][block][{{$bk}}][banner]"/>
+                                            <x-single-img-upload inputName="product_block[{{$gk}}][block][{{$bk}}][banner]" />
                                         </div>
                                         <div class="col-9">
                                             <div class="mb-10 fv-row">
@@ -137,9 +137,9 @@
                                                 <label class="required form-label">Chọn sản phẩm</label>
                                                 <select required class="form-select mb-2" name="product_block[{{$gk}}][block][{{$bk}}][product_ids][]" data-control="select2" data-close-on-select="false" data-placeholder="Chọn sản phẩm" multiple>
                                                     @foreach($products as $p)
-                                                        <option {{in_array($p['id'], $b['product_ids']) ? 'selected' : ''}} value="{{$p['id']}}">
-                                                            {{$p['name']}}
-                                                        </option>
+                                                    <option {{in_array($p['id'], $b['product_ids']) ? 'selected' : ''}} value="{{$p['id']}}">
+                                                        {{$p['name']}}
+                                                    </option>
                                                     @endforeach
                                                 </select>
                                             </div>
@@ -150,16 +150,16 @@
                                             </span>
                                         </div>
                                     </div>
-                                        @endforeach
+                                    @endforeach
                                     @endif
                                 </div>
                             </div>
-                                @endforeach
+                            @endforeach
                             @endif
                         </div>
                         <!--begin::Actions-->
                         <div class="card-footer d-flex justify-content-end py-6 px-9">
-                            <button type="submit" class="btn btn-primary" id="kt_account_profile_details_submit">Lưu</button>
+                            <button type="submit" class="btn btn-primary" id="kt_account_profile_details_submit">Save</button>
                         </div>
                         <!--end::Actions-->
                     </form>
@@ -176,16 +176,16 @@
 <!--end::Content-->
 @endsection
 @push('custom-scripts')
-    <script>
-        $('.add_group').on('click', function (){
-            let max = 0;
-            $('.block_group_item').each(function(){
-                max = max > parseInt($(this).attr('id')) ? max : parseInt($(this).attr('id'));
-            });
+<script>
+    $('.add_group').on('click', function() {
+        let max = 0;
+        $('.block_group_item').each(function() {
+            max = max > parseInt($(this).attr('id')) ? max : parseInt($(this).attr('id'));
+        });
 
-            let id = max + 1;
+        let id = max + 1;
 
-            let html = `
+        let html = `
             <div class="card-body border-top p-9 block_group_item border border-primary mb-5" id="${id}">
                 <div class="fv-row row">
                     <div class="mb-10 col-9">
@@ -237,28 +237,28 @@
                     </div>
                 </div>
             </div>`;
-            $('#block_group').append(html)
-            $('select').select2()
-        })
+        $('#block_group').append(html)
+        $('select').select2()
+    })
 
-        $(document).on('click', '.btn_remove_group', function (){
-            $(this).parents(".block_group_item").remove()
-        })
+    $(document).on('click', '.btn_remove_group', function() {
+        $(this).parents(".block_group_item").remove()
+    })
 
-        //block
-        $(document).on('click', '.btn_add_block', function (){
-            let max = 0;
-            $(this).parents('.block_group_item').find('.block_item').each(function(){
-                console.log($(this).attr('id'))
-                max = max > parseInt($(this).attr('id')) ? max : parseInt($(this).attr('id'));
-            });
-            let id = max + 1;
+    //block
+    $(document).on('click', '.btn_add_block', function() {
+        let max = 0;
+        $(this).parents('.block_group_item').find('.block_item').each(function() {
+            console.log($(this).attr('id'))
+            max = max > parseInt($(this).attr('id')) ? max : parseInt($(this).attr('id'));
+        });
+        let id = max + 1;
 
-            let parent_id = $(this).parents('.block_group_item').attr('id');
+        let parent_id = $(this).parents('.block_group_item').attr('id');
 
-            console.log(id, parent_id)
+        console.log(id, parent_id)
 
-            let html = `
+        let html = `
             <div class="fv-row row block_item mb-10 border border-warning" id="${id}">
                 <div class="col-2">
                     <label class="form-label">Banner khối</label>
@@ -291,12 +291,12 @@
                     </span>
                 </div>
             </div>`;
-            $(this).parents('.block_group_item').find('.block').append(html)
-            $(this).parents('.block_group_item').find('select').select2()
-        })
+        $(this).parents('.block_group_item').find('.block').append(html)
+        $(this).parents('.block_group_item').find('select').select2()
+    })
 
-        $(document).on('click', '.btn_remove_block', function (){
-            $(this).parents(".block_item").remove()
-        })
-    </script>
+    $(document).on('click', '.btn_remove_block', function() {
+        $(this).parents(".block_item").remove()
+    })
+</script>
 @endpush

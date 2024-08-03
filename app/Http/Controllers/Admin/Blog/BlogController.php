@@ -24,7 +24,7 @@ class BlogController extends CrudController
 
     public function getViewFolder(): string
     {
-        return 'admin.blog';
+        return 'admin.blogs';
     }
     /**
      * Display a listing of the resource.
@@ -50,7 +50,7 @@ class BlogController extends CrudController
      */
     // public function store(Request $request)
     // {
-    //     //
+    //     dd($request->input());
     // }
 
     /**
@@ -75,9 +75,16 @@ class BlogController extends CrudController
     /**
      * Update the specified resource in storage.
      */
-    // public function update(Request $request, string $id)
+    // public function update(Request $request, $id)
     // {
-    //     //
+    //     dd($request->input());
+    // }
+
+    // public function updateValidated(Request $request, int $id): array
+    // {
+    //     $data['featured'] = $request->input('featured') ? true : false;
+
+    //     return $data;
     // }
 
     /**

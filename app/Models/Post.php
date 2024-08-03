@@ -22,5 +22,8 @@ class Post extends Model
         'author_id',
         'category_id',
         'store_id',
+        'image',
+        'featured',
+        'status'
     ];
 }

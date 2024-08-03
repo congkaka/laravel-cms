@@ -48,7 +48,7 @@
                                 <label class="col-lg-4 col-form-label fw-bold fs-6">Logo</label>
                                 <!--end::Label-->
                                 <!--begin::Col-->
-                                <x-single-img-upload inputName="logo" fillValue="{{isset($setting['logo']) ? $setting['logo'] : ''}}"/>
+                                <x-single-img-upload inputName="logo" fillValue="{{isset($setting['logo']) ? $setting['logo'] : ''}}" />
                                 <!--end::Col-->
                             </div>
                             <!--end::Input group-->
@@ -72,7 +72,7 @@
                                 <!--begin::Col-->
                                 <div class="col-lg-8">
                                     <!--begin::Row-->
-                                    <x-mutiple-img-upload inputName="slide" fillValues="{{isset($setting['slide']) ? implode(',', $setting['slide']) : '' }}"/>
+                                    <x-mutiple-img-upload inputName="slide" fillValues="{{isset($setting['slide']) ? implode(',', $setting['slide']) : '' }}" />
                                     <!--end::Row-->
                                 </div>
                                 <!--end::Col-->
@@ -86,7 +86,7 @@
                                 <!--begin::Col-->
                                 <div class="col-lg-8">
                                     <!--begin::Row-->
-                                    <x-mutiple-img-upload inputName="main_banner" fillValues="{{isset($setting['main_banner']) ? implode(',', $setting['main_banner']) : '' }}"/>
+                                    <x-mutiple-img-upload inputName="main_banner" fillValues="{{isset($setting['main_banner']) ? implode(',', $setting['main_banner']) : '' }}" />
                                     <!--end::Row-->
                                 </div>
                                 <!--end::Col-->
@@ -100,7 +100,7 @@
                                 <!--begin::Col-->
                                 <div class="col-lg-8">
                                     <!--begin::Row-->
-                                    <x-mutiple-img-upload inputName="sub_banner" fillValues="{{isset($setting['sub_banner']) ? implode(',', $setting['sub_banner']) : '' }}"/>
+                                    <x-mutiple-img-upload inputName="sub_banner" fillValues="{{isset($setting['sub_banner']) ? implode(',', $setting['sub_banner']) : '' }}" />
                                     <!--end::Row-->
                                 </div>
                                 <!--end::Col-->
@@ -110,7 +110,7 @@
                         <!--end::Card body-->
                         <!--begin::Actions-->
                         <div class="card-footer d-flex justify-content-end py-6 px-9">
-                            <button type="submit" class="btn btn-primary" id="kt_account_profile_details_submit">Lưu</button>
+                            <button type="submit" class="btn btn-primary" id="kt_account_profile_details_submit">Save</button>
                         </div>
                         <!--end::Actions-->
                     </form>

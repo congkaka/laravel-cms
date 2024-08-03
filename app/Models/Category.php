@@ -20,13 +20,4 @@ class Category extends Model
     ];
 
     protected $casts = [];
-
-    protected $relations = [
-        'products'
-    ];
-
-    public function products(): HasMany
-    {
-        return $this->hasMany(Product::class);
-    }
 }

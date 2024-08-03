@@ -22,11 +22,12 @@ class UploadController extends Controller
             $url = $this->handleUpload($request->file('upload'));
             $url = asset($url);
             $msg = 'Tải lên thành công';
-            $CKEditorFuncNum = $request->input('CKEditorFuncNum');
-            $response = "<script>window.parent.CKEDITOR.tools.callFunction($CKEditorFuncNum, '$url', '$msg')</script>";
+            // $CKEditorFuncNum = $request->input('CKEditorFuncNum')??'upload';
+            // $response = "<script>window.parent.CKEDITOR.tools.callFunction($CKEditorFuncNum, '$url', '$msg')</script>";
 
-            @header('Content-type: text/html; charset=utf-8');
-            echo $response;
+            // @header('Content-type: text/html; charset=utf-8');
+            // echo $response;
+            return response()->json(['fileName' => 'upload', 'url' => $url, 'uploaded' => 1]);
         }
     }
 
