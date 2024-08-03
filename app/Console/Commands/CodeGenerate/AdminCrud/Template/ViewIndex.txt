@@ -40,7 +40,7 @@
                                 </span>
                                 <!--end::Svg Icon-->
                                 <input type="text" name="name" data-kt-ecommerce-product-filter="search"
-                                       class="form-control form-control-solid w-250px ps-14" value="{{Request::get('name')}}" placeholder="Tìm kiếm"/>
+                                       class="form-control form-control-solid w-250px ps-14" value="{{Request::get('name')}}" placeholder="Search"/>
                             </div>
                             <button type="submit" class="btn btn-success">
                                 <i class="bi bi-search"></i>
